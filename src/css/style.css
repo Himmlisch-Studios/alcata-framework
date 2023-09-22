@@ -1,0 +1,8 @@
+@import 'vendor/normalize.css';
+@import 'base.css';
+
+:root {
+    font-size: 16px;
+
+    /* Colors */
+}

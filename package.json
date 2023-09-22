@@ -1,0 +1,39 @@
+{
+  "name": "capacitor-app",
+  "version": "1.0.0",
+  "description": "An Amazing Capacitor App",
+  "main": "index.js",
+  "keywords": [
+    "capacitor",
+    "mobile"
+  ],
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "dev": "npm run start",
+    "sync": "npx cap sync",
+    "assets": "npx capacitor-assets generate --android",
+    "compile:before": "npm run build && npm run assets",
+    "compile": "npm run compile:before && npx cap sync android && cd android/ && ./gradlew build && echo \"\nCompiled over android/app/build/outputs/apk/release\n\"",
+    "signed": "npm run compile:before && npx cap sync android && cd android/ && ./gradlew assembleRelease --stacktrace && echo \"\nCompiled over android/app/build/outputs/apk/release\n\"",
+    "bundle": "npm run compile:before && npx cap sync android && cd android/ && ./gradlew bundleRelease --stacktrace && echo \"\nCompiled over android/app/build/outputs/bundle/release\n\""
+  },
+  "dependencies": {
+    "@alpinejs/persist": "^3.13.0",
+    "@capacitor/android": "^5.4.1",
+    "@capacitor/app": "^5.0.6",
+    "@capacitor/core": "latest",
+    "alpinejs": "^3.13.0",
+    "pinecone-router": "^3.1.1",
+    "pinecone-router-middleware-views": "^3.0.3"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^3.0.0",
+    "@capacitor/cli": "latest",
+    "vite": "^2.9.13",
+    "vite-plugin-javascript-obfuscator": "^3.0.3"
+  },
+  "author": "",
+  "license": "ISC"
+}
