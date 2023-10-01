@@ -34,6 +34,8 @@
   "devDependencies": {
     "@capacitor/assets": "^3.0.0",
     "@capacitor/cli": "latest",
+    "@tailwindcss/forms": "^0.5.6",
+    "@tailwindcss/typography": "^0.5.10",
     "@types/alpinejs__persist": "^3.13.1",
     "autoprefixer": "^10.4.16",
     "dot-env": "^0.0.1",

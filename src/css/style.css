@@ -1,1 +1,5 @@
 @import 'base.css';
+
+.prose :where(button):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+    @apply px-5 py-2 text-white bg-blue-500 rounded shadow-md transition-colors hover:bg-blue-600;
+}
