@@ -1,9 +1,9 @@
-<div>
-    <h1 x-text="$t('home.hello')"></h1>
+<div class="grid place-content-center h-screen text-center">
+    <h1 class="text-3xl font-bold" x-text="$t('home.hello')"></h1>
     <x-component url="/components/timer.html" x-data="{ date: new Date() }"></x-component>
-    <p>
-        <button x-on:click="$locale('es')" x-show="$locale() != 'es'">Change language to Español</button>
-        <button x-on:click="$locale('en')" x-show="$locale() != 'en'">Change language to English</button>
+    <p class="pb-5">
+        <button class="px-5 py-2 text-white bg-blue-500 rounded shadow-md transition-colors hover:bg-blue-600" x-on:click="$locale('es')" x-show="$locale() != 'es'">Change language to Español</button>
+        <button class="px-5 py-2 text-white bg-blue-500 rounded shadow-md transition-colors hover:bg-blue-600" x-on:click="$locale('en')" x-show="$locale() != 'en'">Change language to English</button>
     </p>
-    <a href="/about">Go to about</a>
+    <a class="underline" href="/about">Go to about</a>
 </div>

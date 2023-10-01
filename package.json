@@ -35,8 +35,11 @@
     "@capacitor/assets": "^3.0.0",
     "@capacitor/cli": "latest",
     "@types/alpinejs__persist": "^3.13.1",
+    "autoprefixer": "^10.4.16",
     "dot-env": "^0.0.1",
     "dotenv-webpack": "^8.0.1",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.3",
     "vite": "^2.9.13",
     "vite-plugin-javascript-obfuscator": "^3.0.3"
   },
