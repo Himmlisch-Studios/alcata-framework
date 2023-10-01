@@ -1,5 +1,9 @@
 <div>
-    <h1>Hello world!</h1>
+    <h1 x-text="$t('home.hello')"></h1>
     <x-component url="/components/timer.html" x-data="{ date: new Date() }"></x-component>
+    <p>
+        <button x-on:click="$locale('es')" x-show="$locale() != 'es'">Change language to Español</button>
+        <button x-on:click="$locale('en')" x-show="$locale() != 'en'">Change language to English</button>
+    </p>
     <a href="/about">Go to about</a>
 </div>

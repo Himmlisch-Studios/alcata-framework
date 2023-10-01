@@ -26,6 +26,7 @@
     "@capacitor/core": "latest",
     "alpinejs": "^3.13.0",
     "alpinejs-component": "^1.2.4",
+    "alpinejs-i18n": "^2.4.0",
     "encrypt-storage": "^2.12.16",
     "pinecone-router": "^3.1.1",
     "pinecone-router-middleware-views": "^3.0.3"

@@ -9,6 +9,8 @@ export default {
      * @type {Date|null}
      */
     _firstTimeAt: Alpine.$persist(null).as('app:firstTimeAt'),
+    _defaultLocale: 'en',
+    _locale: 'en',
     // _secretValue: Alpine.$persist(null).as('app:secret').using(encryption),
     init() {
         this.initFirstTime();

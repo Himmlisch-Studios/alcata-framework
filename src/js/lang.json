@@ -1,0 +1,18 @@
+{
+    "en": {
+        "app": {
+            "exit": "Are you sure you want to exit?"
+        },
+        "home": {
+            "hello": "Hello world!"
+        }
+    },
+    "es": {
+        "app": {
+            "exit": "¿Seguro que quieres salir?"
+        },
+        "home": {
+            "hello": "¡Hola mundo!"
+        }
+    }
+}
