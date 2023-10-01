@@ -1,48 +1,19 @@
 import 'pinecone-router-middleware-views';
 
-import { App } from '@capacitor/app';
-
 import Alpine from 'alpinejs'
 import PineconeRouter from 'pinecone-router';
-import persist from '@alpinejs/persist'
-
+import component from 'alpinejs-component'
+import { Events } from './events';
+import state from './state';
 
 Alpine.plugin(PineconeRouter);
-Alpine.plugin(persist);
+Alpine.plugin(component);
 
-App.addListener('backButton', (e) => {
-    const defaultBack = () => {
-        if (!e.canGoBack) {
-            App.exitApp();
-            return;
-        }
-        window.history.back();
-    }
-
-    if (window.onback) {
-        window.onback(e, defaultBack);
-        return;
-    }
-
-    defaultBack();
-});
-
-window.addEventListener('pinecone-end', () => {
-    // Resets onback handler
-    if (window.onback) {
-        window.onback = null;
-    }
-});
-
-// Alpine.store('app', {
-//     init() {
-//         Alpine.effect(() => {
-
-//         });
-//     }
-// });
-
+Events.init();
 
 Alpine.start();
+
+Alpine.store('app', state);
+
 
 window.Alpine = Alpine;

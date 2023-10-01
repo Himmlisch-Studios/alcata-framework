@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <title>Awesome Capacitor App</title>
     <meta name="viewport"
-        content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+          content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
 
@@ -19,13 +19,16 @@
     <!-- * ROUTES * -->
     <div x-data>
         <template x-route="/" x-view="/views/home.html"></template>
+        <template x-route="/about" x-view="/views/about.html"></template>
         <template x-route="notfound" x-handler="() => $router.navigate('/')"></template>
     </div>
     <!-- * END ROUTES *  -->
 
     <div id="app"></div>
 
+    <!-- * MODULES * -->
     <script src="./js/app.js" type="module"></script>
+    <!-- * END MODULES *  -->
 </body>
 
 </html>

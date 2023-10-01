@@ -25,12 +25,14 @@
     "@capacitor/app": "^5.0.6",
     "@capacitor/core": "latest",
     "alpinejs": "^3.13.0",
+    "alpinejs-component": "^1.2.4",
     "pinecone-router": "^3.1.1",
     "pinecone-router-middleware-views": "^3.0.3"
   },
   "devDependencies": {
     "@capacitor/assets": "^3.0.0",
     "@capacitor/cli": "latest",
+    "@types/alpinejs__persist": "^3.13.1",
     "vite": "^2.9.13",
     "vite-plugin-javascript-obfuscator": "^3.0.3"
   },
