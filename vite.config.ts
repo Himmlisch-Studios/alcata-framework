@@ -1,7 +1,13 @@
-import { defineConfig } from 'vite';
+import { PluginOption, defineConfig } from 'vite';
 import obfuscatorPlugin from 'vite-plugin-javascript-obfuscator';
 
 const isProduction = process.env.NODE_ENV == 'production';
+
+const fullReloadAlways: PluginOption = {
+    handleHotUpdate({ server }) {
+        server.ws.send({ type: "full-reload" });
+    }
+} as PluginOption
 
 export default defineConfig({
     root: './src',
@@ -28,6 +34,8 @@ export default defineConfig({
                     // selfDefending: true //! May break Alpine
                 }
             })
-        ] : [])
+        ] : [
+            fullReloadAlways
+        ]),
     ],
 });
