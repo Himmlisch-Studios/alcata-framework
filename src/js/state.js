@@ -1,5 +1,6 @@
 import Alpine from "alpinejs";
 import persist from '@alpinejs/persist'
+// import { EncryptStorage as encryption } from "./encryption";
 
 Alpine.plugin(persist);
 
@@ -8,6 +9,7 @@ export default {
      * @type {Date|null}
      */
     _firstTimeAt: Alpine.$persist(null).as('app:firstTimeAt'),
+    // _secretValue: Alpine.$persist(null).as('app:secret').using(encryption),
     init() {
         this.initFirstTime();
         this.initWatch();
