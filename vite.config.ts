@@ -16,7 +16,7 @@ export default ({ mode }) => {
         root: './src',
         build: {
             outDir: '../dist',
-            minify: false,
+            minify: true,
             emptyOutDir: true,
         },
         json: {
