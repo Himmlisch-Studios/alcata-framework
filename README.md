@@ -2,7 +2,7 @@
 
 Build cross-platform applications with the technologies you love!
 
-This is a opinionated starter-kit/framework to start working with [Capacitor](https://capacitorjs.com/), [Alpine](https://alpinejs.dev/) and [Tailwind](https://tailwindcss.com/).
+This is an opinionated starter-kit/framework to start working with [Capacitor](https://capacitorjs.com/), [Alpine](https://alpinejs.dev/) and [Tailwind](https://tailwindcss.com/).
 
 It features:
 
@@ -11,4 +11,4 @@ It features:
 - **Partials** with [Alpine Component](https://github.com/markmead/alpinejs-component).
 - **Storage** with [Alpine Persist](https://alpinejs.dev/plugins/persist).
 - **Localization** with [Alpine i18n](https://github.com/rehhouari/alpinejs-i18n).
-- **Security** with [JS Obfuscator](https://github.com/javascript-obfuscator/javascript-obfuscator) and [Encrypti Storage](https://github.com/michelonsouza/encrypt-storage).
+- **Security** with [JS Obfuscator](https://github.com/javascript-obfuscator/javascript-obfuscator) and [Encrypt Storage](https://github.com/michelonsouza/encrypt-storage).
