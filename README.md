@@ -1,13 +1,14 @@
-# Himmlisch Capacitor Starter Kit
+# Alcata Stack Framework
 
-Opinionated Capacitor JS starter kit.
+Build cross-platform applications with the technologies you love!
 
-Bundled with:
-- Alpine JS: As a lightweight frontend framework.
-- Pinecone Router: For SPA routing.
-- Component: For component templating.
-- Persist: For local storage management.
-- JS Obfuscator: For optional code obfuscation.
+This is a opinionated starter-kit/framework to start working with [Capacitor](https://capacitorjs.com/), [Alpine](https://alpinejs.dev/) and [Tailwind](https://tailwindcss.com/).
 
-Features:
-- Easily replace Back Button event setting the `window.onback`.
+It features:
+
+- **Reactivity** thanks to [AlpineJS](https://github.com/alpinejs/alpine).
+- **Routing** with [Pinecone Router](https://github.com/pinecone-router/router).
+- **Partials** with [Alpine Component](https://github.com/markmead/alpinejs-component).
+- **Storage** with [Alpine Persist](https://alpinejs.dev/plugins/persist).
+- **Localization** with [Alpine i18n](https://github.com/rehhouari/alpinejs-i18n).
+- **Security** with [JS Obfuscator](https://github.com/javascript-obfuscator/javascript-obfuscator) and [Encrypti Storage](https://github.com/michelonsouza/encrypt-storage).
