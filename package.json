@@ -13,6 +13,7 @@
     "preview": "vite preview",
     "dev": "npm run start",
     "sync": "npx cap sync",
+    "android": "npm run build && npx cap run android",
     "assets": "npx capacitor-assets generate --android",
     "compile:before": "npm run build && npm run assets",
     "compile": "npm run compile:before && npx cap sync android && cd android/ && ./gradlew build && echo \"\nCompiled over android/app/build/outputs/apk/release\n\"",
