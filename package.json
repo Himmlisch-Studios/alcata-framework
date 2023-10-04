@@ -29,6 +29,7 @@
     "alpinejs-component": "^1.2.4",
     "alpinejs-i18n": "^2.4.0",
     "encrypt-storage": "^2.12.16",
+    "lz-string": "^1.5.0",
     "pinecone-router": "^3.1.1",
     "pinecone-router-middleware-views": "^3.0.3"
   },

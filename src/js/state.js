@@ -1,6 +1,7 @@
 import Alpine from "alpinejs";
 import persist from '@alpinejs/persist'
-// import { EncryptStorage as encryption } from "./encryption";
+// import { EncryptStorage as encryption } from "./storage";
+// import { CompressionStorage as compression } from "./storage";
 
 Alpine.plugin(persist);
 
@@ -12,6 +13,7 @@ export default {
     _defaultLocale: 'en',
     _locale: 'en',
     // _secretValue: Alpine.$persist(null).as('app:secret').using(encryption),
+    // _compressedValue: Alpine.$persist(null).as('app:compressed').using(compression),
     init() {
         this.initFirstTime();
         this.initWatch();
