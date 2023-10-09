@@ -12,3 +12,7 @@
     overscroll-behavior: none;
     /* outline: none; */
 }
+
+[x-cloak] {
+    display: none !important;
+}
