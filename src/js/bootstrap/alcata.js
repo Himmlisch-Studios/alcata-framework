@@ -1,4 +1,5 @@
 import { Alpine } from "../alpine";
+import { ComponentProvider } from "./providers/components";
 import { MobileProvider } from "./providers/mobile";
 import { RouterProvider } from "./providers/router";
 import { TranslationProvider } from "./providers/translation";
@@ -15,6 +16,7 @@ export const System = {
         RouterProvider,
         TranslationProvider,
         MobileProvider,
+        ComponentProvider
     ],
     boot() {
         this.registerProviders();
