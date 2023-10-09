@@ -35,9 +35,6 @@ export default async ({ mode }) => {
             },
             // chunkSizeWarningLimit: 3000, // Configure to prevent size warning
         },
-        optimizeDeps: {
-            entries: 'src/**/*.html'
-        },
         json: {
             stringify: true
         },
