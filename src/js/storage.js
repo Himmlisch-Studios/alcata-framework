@@ -1,6 +1,13 @@
 import { EncryptStorage as Storage } from "encrypt-storage";
 import LZString from 'lz-string';
 
+/**
+ * @typedef {Object} SimpleStorage
+ * @property {(key: string, value: string) => void} setItem
+ * @property {(key: string) => string | null} getItem
+ */
+
+/** @type {SimpleStorage} */
 export const EncryptStorage = {
     storage: new Storage(import.meta.env.VITE_KEY),
     getItem(key) {
@@ -13,6 +20,7 @@ export const EncryptStorage = {
     }
 };
 
+/** @type {SimpleStorage} */
 export const CompressionStorage = {
     storage: LZString,
     getItem(key) {

@@ -16,19 +16,9 @@
 </head>
 
 <body>
-    <!-- * ROUTES * -->
-    <div x-data>
-        <template x-route="/" x-view="/views/home.html"></template>
-        <template x-route="/about" x-view="/views/about.html"></template>
-        <template x-route="notfound" x-handler="() => $router.navigate('/')"></template>
-    </div>
-    <!-- * END ROUTES *  -->
-
     <div id="app"></div>
 
-    <!-- * MODULES * -->
     <script src="./js/app.js" type="module"></script>
-    <!-- * END MODULES *  -->
 </body>
 
 </html>

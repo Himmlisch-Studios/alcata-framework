@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@alpinejs/persist": "^3.13.0",
+    "@caneara/iodine": "^8.5.0",
     "@capacitor/android": "^5.4.1",
     "@capacitor/app": "^5.0.6",
     "@capacitor/core": "latest",

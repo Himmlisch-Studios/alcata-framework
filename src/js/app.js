@@ -1,19 +1,7 @@
-import 'pinecone-router-middleware-views';
+import { System } from "./bootstrap/alcata";
+import { Alpine } from "./alpine";
+import app from "./stores/app";
 
-import Alpine from 'alpinejs'
-import PineconeRouter from 'pinecone-router';
-import component from 'alpinejs-component'
-import { Events } from './events';
-import state from './state';
-import AlpineI18n from "alpinejs-i18n";
+Alpine.store('app', app);
 
-Alpine.plugin(PineconeRouter);
-Alpine.plugin(component);
-Alpine.plugin(AlpineI18n);
-
-Alpine.store('app', state);
-
-Events.init();
-Alpine.start();
-
-window.Alpine = Alpine;
+System.boot();
