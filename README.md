@@ -112,7 +112,7 @@ Adds the option to set the `window.onback`, on your views to handle mobile back 
 
 You can define routes over `src/js/routes.js`. In any of the following ways:
 
-```
+```js
 export default {
     '/': '/views/home.html',
     '/about/:redirect?': {
