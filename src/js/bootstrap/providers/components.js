@@ -36,7 +36,7 @@ export const ComponentProvider = {
                 return;
             }
 
-            if (element.shadowRoot && element.shadowRoot.children.length > 0) {
+            if (element.shadowRoot && element.shadowRoot.children.length > 1) {
                 element.classList.remove(...this.loadingClasses);
                 return;
             }
