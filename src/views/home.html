@@ -1,7 +1,7 @@
 <div class="grid place-content-center h-screen text-center">
     <div class="prose">
         <h1 x-text="$t('home.hello')"></h1>
-        <x-component url="/components/timer.html" x-data="{ date: new Date() }"></x-component>
+        <x-component url="./components/timer.html" x-data="{ date: new Date() }"></x-component>
         <p>
             <button x-on:click="$locale('es')" x-show="$locale() != 'es'">Change language to Español</button>
             <button x-on:click="$locale('en')" x-show="$locale() != 'en'">Change language to English</button>

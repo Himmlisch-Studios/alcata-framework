@@ -1,17 +1,19 @@
-import { PluginOption, defineConfig, loadEnv } from 'vite';
+import { defineConfig, loadEnv } from 'vite';
 import obfuscatorPlugin from 'vite-plugin-javascript-obfuscator';
-import { createHtmlPlugin } from 'vite-plugin-html'
+import { createHtmlPlugin } from 'vite-plugin-html';
 
-const isProduction = process.env.NODE_ENV == 'production';
+import { ForceReloadPlugin, collectHTMLFiles } from './vite.util';
 
-const fullReloadAlways: PluginOption = {
-    handleHotUpdate({ server }) {
-        server.ws.send({ type: "full-reload" });
-    }
-} as PluginOption
+export default async ({ mode }) => {
+    const isProduction = process.env.NODE_ENV == 'production';
 
-export default ({ mode }) => {
     process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
+
+    const extraPaths = await collectHTMLFiles([
+        'src/views',
+        'src/components',
+    ]);
+
 
     return defineConfig({
         root: './src',
@@ -24,8 +26,17 @@ export default ({ mode }) => {
                 format: {
                     comments: false
                 }
-            }
+            },
+            rollupOptions: {
+                input: {
+                    main: 'src/index.html',
+                    ...extraPaths
+                }
+            },
             // chunkSizeWarningLimit: 3000, // Configure to prevent size warning
+        },
+        optimizeDeps: {
+            entries: 'src/**/*.html'
         },
         json: {
             stringify: true
@@ -44,12 +55,13 @@ export default ({ mode }) => {
                         debugProtection: true,
                         disableConsoleOutput: true,
                         numbersToExpressions: true,
+                        simplify: true,
+                        selfDefending: true,
                         // renameProperties: true, //! May break Alpine
-                        // selfDefending: true //! May break Alpine
                     }
                 })
             ] : [
-                fullReloadAlways
+                ForceReloadPlugin
             ]),
         ],
     })
