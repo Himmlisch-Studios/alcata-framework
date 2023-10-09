@@ -5,6 +5,7 @@ module.exports = {
     "./src/**/*.{js,html}",
 
   ],
+  important: true,
   theme: {
     extend: {
       typography: {

@@ -12,6 +12,17 @@ body {
     @apply flex isolate overflow-y-auto overflow-x-hidden relative flex-col min-h-screen max-h-screen bg-gray-50 shadow-md;
 }
 
+div,
+header,
+footer,
+section,
+article,
+nav,
+aside,
+form {
+    @apply flex flex-col;
+}
+
 input[type="text"],
 input[type="password"],
 input[type="email"] {
