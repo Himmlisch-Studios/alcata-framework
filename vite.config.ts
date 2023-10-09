@@ -1,5 +1,6 @@
 import { PluginOption, defineConfig, loadEnv } from 'vite';
 import obfuscatorPlugin from 'vite-plugin-javascript-obfuscator';
+import { createHtmlPlugin } from 'vite-plugin-html'
 
 const isProduction = process.env.NODE_ENV == 'production';
 
@@ -16,14 +17,24 @@ export default ({ mode }) => {
         root: './src',
         build: {
             outDir: '../dist',
-            minify: true,
+            minify: 'terser',
             emptyOutDir: true,
+            terserOptions: {
+                compress: true,
+                format: {
+                    comments: false
+                }
+            }
+            // chunkSizeWarningLimit: 3000, // Configure to prevent size warning
         },
         json: {
             stringify: true
         },
         plugins: [
             ...(isProduction ? [
+                createHtmlPlugin({
+                    minify: true,
+                }),
                 obfuscatorPlugin({
                     include: ['src/js/**/*.js'],
                     exclude: [/node_modules/],
