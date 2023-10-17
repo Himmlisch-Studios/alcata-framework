@@ -1,8 +1,5 @@
 import routes from "../../routes";
 
-/**
- * @type {import("../alcata").ServiceProvider}
- */
 export const RouterProvider = {
     register() {
         this.loadMiddlewares();

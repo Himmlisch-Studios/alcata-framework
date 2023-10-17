@@ -4,14 +4,7 @@ import { MobileProvider } from "./providers/mobile";
 import { RouterProvider } from "./providers/router";
 import { TranslationProvider } from "./providers/translation";
 
-/**
- * @typedef ServiceProvider
- * @property {function} [register] - Runs before Alpine initialization
- * @property {function} [boot] - Runs after Alpine init
- */
-
 export const System = {
-    /** @type {ServiceProvider[]} */
     services: [
         RouterProvider,
         TranslationProvider,
@@ -19,6 +12,7 @@ export const System = {
         ComponentProvider
     ],
     boot() {
+        window.Alcata = {};
         this.registerProviders();
 
         Alpine.start();

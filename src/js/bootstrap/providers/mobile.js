@@ -1,8 +1,5 @@
 import { App } from "@capacitor/app";
 
-/**
- * @type {import("../alcata").ServiceProvider}
- */
 export const MobileProvider = {
     register() {
         App.addListener('backButton', (e) => {

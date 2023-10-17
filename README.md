@@ -91,9 +91,6 @@ An example of this, is the TranslationProvider, that boots up [Alpine i18n](http
 ```js
 import locale from '../../lang/locale.json';
 
-/**
- * @type {import("../alcata").ServiceProvider}
- */
 export const TranslationProvider = {
     locale: 'en',
     fallbackLocale: 'en',

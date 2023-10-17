@@ -1,9 +1,6 @@
 import locale from '../../lang/locale.json';
 
 
-/**
- * @type {import("../alcata").ServiceProvider}
- */
 export const TranslationProvider = {
     locale: 'en',
     fallbackLocale: 'en',
