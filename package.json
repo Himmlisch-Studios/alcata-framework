@@ -26,6 +26,7 @@
     "@capacitor/android": "^5.4.1",
     "@capacitor/app": "^5.0.6",
     "@capacitor/core": "latest",
+    "@capacitor/preferences": "^5.0.6",
     "alpinejs": "^3.13.0",
     "alpinejs-component": "^1.2.4",
     "alpinejs-i18n": "^2.4.0",

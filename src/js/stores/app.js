@@ -1,12 +1,13 @@
 import { Alpine } from "../alpine";
-// import { EncryptStorage as encryption } from "./storage";
-// import { CompressionStorage as compression } from "./storage";
+import { CapacitorStorage as capacitor } from "../storage";
+// import { EncryptStorage as encryption } from "../storage";
+// import { CompressionStorage as compression } from "../storage";
 
 export default {
     /**
      * @type {Date|null}
      */
-    _firstTimeAt: Alpine.$persist(null).as('app:firstTimeAt'),
+    _firstTimeAt: Alpine.$persist(null).as('app:firstTimeAt').using(capacitor),
     // _secretValue: Alpine.$persist(null).as('app:secret').using(encryption),
     // _compressedValue: Alpine.$persist(null).as('app:compressed').using(compression),
     init() {
