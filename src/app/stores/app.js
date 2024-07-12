@@ -1,11 +1,10 @@
-import { Alpine } from "../alpine";
 // import { EncryptStorage as encryption } from "./storage";
 // import { CompressionStorage as compression } from "./storage";
 
-export default {
-    /**
-     * @type {Date|null}
-     */
+import Alpine from "alpinejs";
+
+export default () => ({
+    /** @type {Date|null} */
     _firstTimeAt: Alpine.$persist(null).as('app:firstTimeAt'),
     // _secretValue: Alpine.$persist(null).as('app:secret').using(encryption),
     // _compressedValue: Alpine.$persist(null).as('app:compressed').using(compression),
@@ -21,4 +20,4 @@ export default {
             /* Your code goes here */
         });
     }
-};
+});

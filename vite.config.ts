@@ -1,7 +1,7 @@
 import { defineConfig, loadEnv } from 'vite';
 import obfuscatorPlugin from 'vite-plugin-javascript-obfuscator';
-import { createHtmlPlugin } from 'vite-plugin-html';
-
+import { createHtmlPlugin } from 'vite-plugin-html'
+import injectHTML from 'vite-plugin-html-inject';
 import { ForceReloadPlugin, collectHTMLFiles } from './vite.util';
 
 export default async ({ mode }) => {
@@ -9,14 +9,10 @@ export default async ({ mode }) => {
 
     process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
 
-    const extraPaths = await collectHTMLFiles([
-        'src/views',
-        'src/components',
-    ]);
-
-
     return defineConfig({
+        base: './',
         root: './src',
+        publicDir: '../public',
         build: {
             outDir: '../dist',
             minify: 'terser',
@@ -24,13 +20,13 @@ export default async ({ mode }) => {
             terserOptions: {
                 compress: true,
                 format: {
-                    comments: false
+                    comments: false,
                 }
             },
             rollupOptions: {
                 input: {
                     main: 'src/index.html',
-                    ...extraPaths
+                    ...await collectHTMLFiles(['src/views'])
                 }
             },
             // chunkSizeWarningLimit: 3000, // Configure to prevent size warning
@@ -39,9 +35,13 @@ export default async ({ mode }) => {
             stringify: true
         },
         plugins: [
+            injectHTML({
+                tagName: 'partial',
+                sourceAttr: 'load'
+            }),
             ...(isProduction ? [
                 createHtmlPlugin({
-                    minify: true,
+                    minify: false,
                 }),
                 obfuscatorPlugin({
                     include: ['src/js/**/*.js'],
@@ -61,5 +61,5 @@ export default async ({ mode }) => {
                 ForceReloadPlugin
             ]),
         ],
-    })
-};
+    });
+}

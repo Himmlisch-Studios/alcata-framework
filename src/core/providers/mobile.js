@@ -1,6 +1,6 @@
 import { App } from "@capacitor/app";
 
-export const MobileProvider = {
+export const MobileProvider = () => ({
     register() {
         App.addListener('backButton', (e) => {
             const defaultBack = () => {
@@ -31,4 +31,4 @@ export const MobileProvider = {
             }
         });
     }
-}
+});

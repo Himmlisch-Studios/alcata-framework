@@ -1,7 +1,13 @@
-import routes from "../../routes";
-
-export const RouterProvider = {
+export const RouterProvider = ({
+    basePath = '/',
+    hash = false,
+    scope = 'app',
+    routes = {}
+} = {}) => ({
     register() {
+        window.PineconeRouter.settings.basePath = basePath;
+        window.PineconeRouter.settings.hash = hash;
+        window.PineconeRouter.settings.templateTargetId = scope;
         this.loadMiddlewares();
         this.loadRoutes();
     },
@@ -26,7 +32,7 @@ export const RouterProvider = {
 
             if (typeof route === typeof '') {
                 callback = {
-                    view: [route]
+                    template: [route]
                 };
             }
 
@@ -38,4 +44,4 @@ export const RouterProvider = {
 
         }
     }
-}
+});
